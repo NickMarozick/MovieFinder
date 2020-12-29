@@ -8,13 +8,24 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Movie finder webpage"
-    # return render_template("index.html")
+    return render_template("index.html")
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
 
 
-# @app.route('/')
-# def homepage():
-#     return render_template("index.html")
+@app.route('/GetByTitle')
+def getByTitle():
+    return render_template("getByTitle.html")
+
+@app.route('/GetByGenre')
+def getByGenre():
+    return render_template("getByGenre.html")
+
+@app.route('/GetSimiliar')
+def getSimiliar():
+    return render_template("getSimiliar.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
